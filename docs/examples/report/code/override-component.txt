@@ -1,0 +1,10 @@
+class UrlDirective extends window.HtApp.Directive {
+  link () {
+    const url = this.element.textContent
+    this.element.innerHTML = `<a href="${url}?from=HTMLTeXt">${url}</a>`
+  }
+}
+
+UrlDirective.selector = 'url'
+
+window.htApp.directive(UrlDirective)

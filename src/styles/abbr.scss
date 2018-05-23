@@ -1,0 +1,18 @@
+abbr-source {
+  display: block;
+  margin-bottom: 12px;
+
+  a {
+    display: flex;
+
+    .ht-abbr {
+      flex: none;
+      min-width: 120px;
+      font-weight: bold;
+    }
+
+    .ht-abbr-description {
+      flex: auto;
+    }
+  }
+}

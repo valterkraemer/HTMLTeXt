@@ -1,0 +1,40 @@
+footnote {
+  break-before: avoid;
+
+  vertical-align: super;
+  font-size: 0.7em;
+  line-height: 0;
+}
+
+.ht-page-footnotes:not(:empty) {
+  position: relative;
+  padding: 5px 0 0px 20px;
+  margin-top: 10px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #666;
+    width: 40%;
+    height: 1px;
+  }
+}
+
+.ht-footnote {
+  display: block;
+  text-align: left;
+  line-height: 1.3em;
+  font-size: 0.8em;
+
+  + .ht-footnote {
+    margin-top: 0.2em;
+  }
+}
+
+.ht-footnote-number {
+  vertical-align: super;
+  font-size: 0.8em;
+  line-height: 0;
+}

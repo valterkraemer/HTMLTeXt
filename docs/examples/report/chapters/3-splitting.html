@@ -1,0 +1,36 @@
+<h1>Splitting</h1>
+
+One of the core requirements for this project is to be able to split the content into pages. This has to be done before being sent to the printing screen to be able to for example add page numbers, create a table of contents, and add footnotes.
+
+<h2>Methods</h2>
+
+Splitting the content into pages is the most time-consuming part when generating the document, currently it takes up about half of all time. Therefore it is important to make it as fast as possible. I evaluated four different ways of figuring out where the pages should be split and compared execution time.
+
+<h3><code>scrollTop = clientHeight</code></h3>
+
+This method relies on adding content to a page element by element until the page overflows. If that element is a Text Node, a binary search algorithm adds text until the page is filled.
+
+<h3 style="break-before: page"><code>caretRangeFromPoint</code></h3>
+
+This method uses the non-standard method <code>caretRangeFromPoint</code> to get a Range<cite>Range</cite> of items that will fit inside a page. It will set the start of the Range at the start of content and the end of the Range to the content <i>before</i> the first leftmost pixel <i>after</i> the height of the page (<code>x: 0, y: pageHeight + 1</code>). The drawbacks of this method is that <code>caretRangeFromPoint</code> is not a standard so it is not supported by all browsers. The point to be set to the end of the Range also have to be visible on the screen to function.
+
+<h3><code>CSS Columns</code></h3>
+
+The idea of this method is to use CSS Columns<footnote><url>http://www.w3.org/TR/2016/WD-cssom-view-1-20160317/</url></footnote> to split the pages. It works by setting the height and width of the columns to the page size, then cloning the content the same amount of times that there are columns, then offsetting the content to show the next page.
+
+<h3><code>Range Columns</code></h3>
+
+This method would also use columns, then calculate <code>DOMRect</code> for all nodes. Then being able to know depending on the x-value of <code>DOMRect</code> to what page it should belong.
+
+<h2>Performance comparison</h2>
+
+To compare the different splitting methods a test document was created, that when split resulted in 361 pages. The time it took for the different splitting methods can be seen in Figure <ref>splitting-performance</ref>.
+
+<figure ref="splitting-performance">
+  <ht-input src="../tables/splitting-performance.html"></ht-input>
+  <figcaption>Splitting methods performance comparison</figcaption>
+</figure>
+
+<h2>Conclusion</h2>
+
+The two feasible methods where <code>scrollTop = clientHeight</code> and <code>caretRangeFromPoint</code>. I decided to use <code>scrollTop = clientHeight</code> for this project partly because of <code>caretRangeFromPoint</code>'s mentioned flaws, but also because footnotes were expected to be easier to implement and more stable using <code>scrollTop = clientHeight</code>.

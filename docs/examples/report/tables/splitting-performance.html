@@ -1,0 +1,41 @@
+<table class="table-1">
+  <thead>
+    <tr>
+      <td></td>
+      <td>Safari 11.1</td>
+      <td>Chrome 66</td>
+      <td>Firefox 60</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>scrollTop = clientHeight</td>
+      <td>3050ms</td>
+      <td>2450ms</td>
+      <td>2500ms</td>
+    </tr>
+    <tr>
+      <td>caretRangeFromPoint</td>
+      <td>1350ms</td>
+      <td>3950ms</td>
+      <td>Not supported</td>
+    </tr>
+    <tr>
+      <td>CSS Columns</td>
+      <td>&gt; 10000ms*</td>
+      <td>&gt; 10000ms*</td>
+      <td>&gt; 10000ms*</td>
+    </tr>
+    <tr>
+      <td>Columns + Range</td>
+      <td>&gt; 10000ms</td>
+      <td>&gt; 10000ms</td>
+      <td>&gt; 10000ms</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">* The splitting itself was fast, but the DOM took a long time to update</td>
+    </tr>
+  </tfoot>
+</table>

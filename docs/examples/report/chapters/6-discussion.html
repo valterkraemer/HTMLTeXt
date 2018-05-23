@@ -1,0 +1,11 @@
+<h1>Limitations and Future work</h1>
+
+LaTeX have a huge set of functionalities and the goal of this project is not to implement all of them. But a couple more common ones would be good.
+
+Some shortcuts were taken during implementation that currently works well – but can lead to problems in the future. Refactoring the codebase would be good to improve extendability and modifications.
+
+Using <code>clientRect</code> on Text Nodes would eliminate the need for splitting Text Nodes using <code>scrollTop = clientHeight</code> that could improve performance.
+
+While writing this document, one feature I am especially missing: avoiding splitting text between text and footnote/citation. And also not making page breaks directly after a heading.
+
+It would also be good to investigate if Vivliostyle could be used together with this project. Then Vivliostyle could take care of things like positioning headers, footers and splitting the pages.

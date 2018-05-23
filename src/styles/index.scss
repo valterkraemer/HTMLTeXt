@@ -1,0 +1,47 @@
+@import './abbr';
+@import './bibliography';
+@import './code-highlight';
+@import './figures';
+@import './footnotes';
+@import './headings';
+@import './img';
+@import './page';
+@import './reset';
+@import './status';
+@import './table-of-contents';
+@import './url';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #EEE;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+}
+
+.layout {
+  display: flex;
+}
+
+.align--center {
+  align-items: center;
+}
+
+.flex--none {
+  flex: none;
+}
+
+.flex {
+  flex: 1 1 auto;
+}
+
+pre code {
+  font-size: 0.7em;
+}

@@ -1,0 +1,101 @@
+<h1>Implementation</h1>
+
+<h2>Features</h2>
+
+Most of the features implemented in this project is presented in this section. These were the ones I deemed the most important – the ones I have used in LaTeX.
+
+<h3>Headings</h3>
+
+Headings are automatically numbered, so the first <code><plain text="<h1>"></plain></code> tag will automatically get be preceded by <code>1</code>, the second by <code>2</code> and so on. Subchapters like <code><plain text="<h2> <h3>"></plain></code> and the other heading tags will be preceded with the number related to them, e.g. <code>1.2.1</code>. If one does not want the heading to be numbered, adding the attribute <code>ignore</code> will not assign the heading a number.
+
+<h3>Table of contents</h3>
+
+Adding the element <code><plain text="<table-of-contents>"></plain></code> will create a table of content of all the headings. Headings with the attribute <code>ignore</code> will not be added. Clicking a table of contents item will take you to the related heading.
+
+<h3>Figures</h3>
+
+Figures using the element <code><plain text="<figure>"></plain></code> will automatically be numbered. The default type is <i>Figure</i>, but by adding the attribute <code>type="table"</code> – the figure will be treated as a table instead.
+
+<h3>Footnotes</h3>
+
+Footnotes can be added by using the element <code><plain text="<footnote>"></plain></code>. Footnotes will then be numbered and added to the bottom of the page. Clicking a footnote reference will take you to the footnote.
+
+<h3>Citing</h3>
+
+It is possible to cite different sources using the element <code><plain text="<cite>"></plain></code>. It will then look up the citation key from the provided BibTeX files. BibTeX files can be added in the head of the <code>index.html</code> file using the element <code><plain text='<link rel="bibliography" href="bibtex-file.bib'></plain>"></plain></code>. The cited items will then be listed where the element <code><plain text="<bibliography>"></plain></code> is added. Clicking a cite element will take you to the reference in the bibliography.
+
+Parsing the BibTeX files is done by the library bib2json<footnote><url>https://github.com/mayanklahiri/bib2json</url></footnote>
+
+<h3>Abbreviations</h3>
+
+It is possible to define abbreviations using the element <code><plain text="<abbr-source>"></plain></code> and then reference them by using <code><plain text="<abbr>"></plain></code>. Clicking a abbreviation takes you to the definition.
+
+<h3 style="break-before: page">Referencing</h3>
+
+It is possible to reference headings and figures by adding the attribute <code>ref="ref-key"</code> to them. Now by using the element <code><plain text="<ref>ref-key</ref>"></plain></code> the element will be replaced with e.g. <code>3.2</code>. Clicking the ref-element will take you to the referenced element.
+
+<h3>Including from other files</h3>
+
+The element <code><plain text='<ht-input src="...path"></ht-input>'></plain></code> allows the user to include HTML from other files. The whole element will be replaced by the included HTML.
+
+It is also possible to include text using the attribute <code>include-text="...path"</code>. This is especially useful for including e.g. HTML code that otherwise would have to be escaped.
+
+The paths of both <code><plain text='<ht-input'></plain></code> and <code>include-text</code> are relative to the file that they are being referenced from.
+
+<h3>Page numbers</h3>
+
+Page numbers are added when pages are split. If the number needs to be changed, the element and attribute <code><plain text='<page-number set="1"></page-number>'></plain></code> can be used. In this case, pages will increment from 1. It is also possible to use roman numbers by using the attribute <code>roman="true"</code>.
+
+<h3>Plain text</h3>
+
+The element and attribute <code><plain text='<plain text="<h1>"></plain>'></plain></code> can be used to enter text without the need of escaping, e.g. <plain text="<"></plain> and <plain text=">"></plain>.
+
+<h3>URLs</h3>
+
+Using the element <code><plain text="<url>http://...</url>"></plain></code> will make the URL clickable.
+
+<h3>Code highlighting</h3>
+
+Using the code snippet presented in Figure <ref>code-highlighting</ref> highlights the syntax of the code (also shown in the same figure). The library PrismJS<footnote><url>https://prismjs.com</url></footnote> is used to highlight the code. To add line numbers to the code snippet – one need to add the class <code>line-numbers</code>. The attribute <code>language-*</code> tells PrismJS what coding language the content should be highlighted as. The <code>*</code> represents the language, e.g. <code>language-html</code>.
+
+<figure ref="code-highlighting">
+  <pre class="line-numbers language-html"><code
+    include-text="../code/code-highlighting.txt"
+    code-highlight></code></pre>
+
+  <figcaption>Code highlighting</figcaption>
+</figure>
+
+<h2>Templates</h2>
+
+Templates are used to define the structure of the HMTL used by different components. The template for <code><plain text="<h1>-<h5>"></plain></code> elements is shown in Figure <ref>heading-template</ref>. Attributes beginning with <code>#</code> are used to link templates with different components. This means that it is possible to restructure and modify the templates to one's liking as long as the same <code>#</code>-attributes still exist.
+
+<figure ref="heading-template">
+  <pre class="line-numbers language-html"><code
+    include-text="../code/heading-template.txt"
+    code-highlight></code></pre>
+
+  <figcaption>Heading template</figcaption>
+</figure>
+
+<h2>Extendability</h2>
+
+Most parts of the project is extendable and modifiable. All components like headings, figures and cite can be overridden. Templates can also be overridden – Figure <ref>override-template</ref> shows how a template is overridden (or a new one is registered).
+
+<figure ref="override-template">
+  <pre class="line-numbers language-js"><code
+    include-text="../code/override-template.txt"
+    code-highlight></code></pre>
+
+  <figcaption>Overriding template</figcaption>
+</figure>
+
+New components are registered and existing ones are overridden by using the following syntax:
+
+<figure ref="override-component">
+  <pre class="line-numbers language-js"><code
+    include-text="../code/override-component.txt"
+    code-highlight></code></pre>
+
+  <figcaption>Overriding or registering component</figcaption>
+</figure>

@@ -1,0 +1,87 @@
+.ht-app {
+  padding: 30px 20px;
+}
+
+$page-height: 29.7cm;
+$page-padding: 3.3cm;
+$page-padding-bottom: 2cm;
+
+.ht-flat-content, .ht-page {
+  position: relative;
+
+  background-color: white;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  margin: 0 auto 15px auto;
+
+  width: 21cm;
+  padding: $page-padding;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  line-height: 1.6em;
+  text-align: justify;
+  white-space: pre-line;
+
+  hyphens: auto;
+}
+
+.ht-page {
+  display: flex;
+  flex-direction: column;
+
+  height: $page-height;
+  padding-bottom: $page-padding-bottom;
+
+  break-after: page;
+
+  &:last-of-type {
+    break-after: auto;
+  }
+}
+
+@page {
+  size: A4 portrait;
+}
+
+@media print {
+  .ht-page {
+    margin: 0;
+    box-shadow: none;
+    height: $page-height - $page-padding-bottom;
+    padding-bottom: 0;
+  }
+}
+
+.ht-page-header {
+  flex: none;
+  display: flex;
+
+  min-height: 1.5em;
+  margin-bottom: 1.5em;
+
+  .ht-page-title {
+    flex: none;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  .ht-page-number {
+    flex: none;
+    margin-left: auto;
+  }
+}
+
+.ht-page-content {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.ht-page-footnotes {
+  flex: none;
+}
+
+.ht-page-footer {
+  margin-top: 30px;
+  flex: none;
+  text-align: center;
+}

@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>project_report_valter_kraemer</title>
+
+  <script src="/bundle.js"></script>
+  <link rel="stylesheet" href="two-columns.css">
+
+  <link rel="bibliography" href="bibliography.bib">
+</head>
+
+<body>
+  <ht-input src="cover.html"></ht-input>
+  <ht-input src="chapters/1-introduction.html"></ht-input>
+  <ht-input src="chapters/2-background.html"></ht-input>
+  <ht-input src="chapters/3-splitting.html"></ht-input>
+  <ht-input src="chapters/4-implementation.html"></ht-input>
+  <ht-input src="chapters/5-evaluation.html"></ht-input>
+  <ht-input src="chapters/6-discussion.html"></ht-input>
+  <h1 ignore>Bibliography</h1>
+  <bibliography></bibliography>
+
+  <script>
+  window.htApp.setTemplate('page', `
+    <div class="ht-page">
+      <div class="ht-page-header">
+        <div #title class="ht-page-title"></div>
+        <div #number-top class="ht-page-number ht-page-number-top"></div>
+      </div>
+
+      <div class="ht-page-content">
+        <div #content class="content-inner"></div>
+      </div>
+
+      <div #footnotes class="ht-page-footnotes"></div>
+
+      <div #footer class="ht-page-footer">
+        <div #number-bottom class="ht-page-number ht-page-number-bottom"></div>
+      </div>
+    </div>
+  `)
+  </script>
+</body>
+</html>

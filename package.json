@@ -1,0 +1,41 @@
+{
+  "name": "htmltext",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Valter Kraemer",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "serve": "webpack-serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "autoprefixer": "^8.5.0",
+    "babel-loader": "^8.0.0-beta",
+    "babel-polyfill": "^6.26.0",
+    "bluebird": "^3.5.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
+    "postcss-loader": "^2.1.5",
+    "prismjs": "^1.14.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2",
+    "webpack-merge": "^4.1.2",
+    "webpack-serve": "^1.0.2"
+  },
+  "dependencies": {}
+}

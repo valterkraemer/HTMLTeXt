@@ -1,0 +1,6 @@
+window.htApp.setTemplate('h1', `
+  <div class="ht-heading">
+    Chapter <span #chapter class="ht-chapter"></span>
+    <div #name class="ht-name"></div>
+  </div>
+`)

@@ -1,0 +1,40 @@
+h1, h2, h3, h4, h5 {
+  display: block;
+  font-weight: bold;
+  margin-left: 0;
+  margin-right: 0;
+  white-space: normal;
+  line-height: 1.5em;
+}
+
+h1 {
+  break-before: page;
+
+  font-size: 2em;
+  margin-top: 6em;
+  margin-bottom: 1.67em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h4 {
+  font-size: 1em;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+}
+
+h5 {
+  font-size: .83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+}
