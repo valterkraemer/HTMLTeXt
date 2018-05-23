@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>HTMLTeXt</title>
+
+    <link rel="stylesheet" href="app.css">
+  </head>
+
+  <body>
+    <div class="pages">
+      <div class="page">
+        <h1 class="main-heading">HTMLTeXt</h1>
+
+        <p>The idea of this project is to allow users with a web development background to write scientific papers using HTML instead of LaTeX by leveraging familiar elements like <code>&lt;h1&gt;</code>, <code>&lt;ul&gt;</code> and <code>&lt;table&gt;</code>. Then converting the content to a PDF.</p>
+
+        <p>The easiest way to get started i probably by checking out the <a href="#examples">examples</a>.</p>
+
+        <p>You probably need a server running to use HTMLTeXt. You could for example check out <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server" target="_blank">Mozilla's testing server guide</a>. Or if you are using <a href="https://code.visualstudio.com" target="_blank">VS Code</a> you could use the extension <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a> to get livereload.</p>
+
+        <h2>Features</h2>
+
+        HTMLTeXt currently supports the features I needed for writing my Master's thesis.
+
+        <ul>
+          <li>Numbered headings</li>
+          <li>Automatic table of contents</li>
+          <li>Citing and generating bibliography from BibTeX file</li>
+          <li>Footnotes</li>
+          <li>Code highlighting</li>
+          <li>Figure / Table numbering</li>
+          <li>Internally referencing chapters and figures</li>
+          <li>Abbreviations</li>
+          <li>Splitting the content into pages</li>
+          <li>Including content from other files</li>
+          <li>+ more</li>
+        </ul>
+
+        <h2>Generating PDF</h2>
+
+        <ul>
+          <li>Open document in browser</li>
+          <li>Open print dialog</li>
+          <li>Save to file</li>
+        </ul>
+      </div>
+
+      <div class="page">
+
+        <a name="examples"></a>
+        <h2>Examples</h2>
+
+        <h3>Project Report</h3>
+
+        This project was started as a school project. The final report was written using HTMLTeXt.
+
+        <div class="demo-source">
+          <a href="./examples/report/" target="_blank">Demo</a> |
+          <a href="https://github.com/valterkraemer/HTMLTeXt/tree/master/docs/examples/report" target="_blank"><code>Source</code></a>
+        </div>
+
+        <h3>HTMLTeX boiler plate</h3>
+
+        A minimal example that still showcases all of HTMLTeXt's features.
+
+        <div class="demo-source">
+          <a href="./examples/boilerplate/" target="_blank">Demo</a> |
+          <a href="https://github.com/valterkraemer/HTMLTeXt/tree/master/docs/examples/report" target="_blank"><code>Source</code></a>
+        </div>
+
+        <h2>Browser support</h2>
+
+        <table>
+          <body>
+            <tr>
+              <td>Chrome 66</td>
+              <td>Yes, +smallest generated PDF</td>
+            </tr>
+            <tr>
+              <td>Safari 11.1</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Firefox 60</td>
+              <td>Slowest and buggy</td>
+            </tr>
+          </body>
+        </table>
+
+        <h2>Troubleshooting</h2>
+
+        Have the browser console open to see if there are any errors or warnings
+
+        <ul>
+          <li><code>Error: Url: x.html not found!</code>: You possibly need to add <code>/</code> to the end of your URL in teh browser.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

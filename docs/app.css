@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('lib/fonts/cmunrm.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('lib/fonts/cmunbx.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('lib/fonts/cmunti.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('lib/fonts/cmunbi.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  font-family: "Computer Modern Serif", sans-serif;
+  background-color: #EEE;
+}
+
+.pages {
+  padding: 30px 20px;
+}
+
+.page {
+  position: relative;
+
+  background-color: white;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  margin: 0 auto 15px auto;
+
+  width: 21cm;
+  height: 29.7cm;
+  padding: 3.3cm;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  line-height: 1.6em;
+  text-align: justify;
+
+  hyphens: auto;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+.main-heading {
+  font-size: 42px;
+  text-align: center;
+}
+
+/* TABLES */
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table td {
+  padding: 5px 7px;
+  border: 1px solid #999;
+}
+
+table td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+
+.demo-source {
+  margin-top: 5px;
+}
