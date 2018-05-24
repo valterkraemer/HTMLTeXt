@@ -21,3 +21,7 @@ It takes inspiration from LaTeX and supports features like:
 [Project webpage](https://valterkraemer.github.io/HTMLTeXt/)
 
 [Demo](https://valterkraemer.github.io/HTMLTeXt/examples/report/)
+
+## Releases
+
+Built versions can be found under [Releases](https://github.com/valterkraemer/HTMLTeXt/releases)
